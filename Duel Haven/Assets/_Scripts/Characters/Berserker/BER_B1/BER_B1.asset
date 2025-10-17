@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee6a2efa68f9264ab0d5e3600328641, type: 3}
+  m_Name: BER_B1
+  m_EditorClassIdentifier: 
+  abilityName: Sword Swing
+  icon: {fileID: 0}
+  keybind: 323
+  cooldown: 1
+  manaCost: 10
+  castTime: 0.3
+  audioClip: {fileID: 0}
+  effectData:
+  - {fileID: 11400000, guid: 496168868730eb249ab963f8eadf2768, type: 2}
+  - {fileID: 11400000, guid: 1a6a90bc35d6f59438d6c8616c33c157, type: 2}

@@ -1,0 +1,38 @@
+	• Use
+		○ Prepare > Cast > End
+	• Interrupt
+	• OnHit
+	• Cooldown
+
+
+Notes
+	• Ability
+		○ For server auth, gameplay should be coupled and direct, FX should be separate and event driven
+		○ Don't need async, drive off Tick(), translates better to netcode since it will use an external (non-Unity) timer
+		○ Only need Prepare>Cast>End for Use
+		○ Don't need CleanUp by default, only interrupt
+		○ Separate animation/direction logic
+			§ Ability
+				□ CastDirection()
+				□ AnimHash()
+			§ MovementAnimator
+				□ Face(direction)
+		○ Clip length should be manually set in AbilityData. Presentation layer shouldn't drive gameplay layer
+	• PlayerMovement
+		○ Move MovementAnimator to AnimationController
+		○ Move directional logic into PlayerMovement
+		○ Make Driver not a MonoBehaviour?
+	• AnimationController
+		○ Has reference to AnimatorController and Character.name
+		○ Acts as animation interface between other systems
+		○ Handled via events, part of client-side presentation layer
+		○ Accepts arguments to determine hash
+		○ Animation naming scheme: character_state_direction
+			§ State
+				□ Walking
+				□ Idle
+				□ Ability.name
+		○ Methods
+			§ PlayAnimation(direction, state)
+				□ String hash = (character.name_state_direction)
+Animator.Play(hash)
